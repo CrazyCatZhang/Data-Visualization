@@ -59,6 +59,9 @@
         ]
     };
     myChart.setOption(option);
+    window.addEventListener('resize', function () {
+        myChart.resize();
+    });
 })();
 
 (function () {
@@ -605,7 +608,7 @@
         // 我们可以通过hotData[$(this).index()].brands 拿到的是城市对象的品牌种类
         // console.log(hotData[$(this).index()].brands);
         // 开始遍历品牌数组
-        var subHTML = "";
+        let subHTML = "";
         $.each(hotData[currentEle.index()].brands, function (index, item) {
             // 是对应城市的每一个品牌对象
             // console.log(item);
